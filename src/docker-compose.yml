@@ -1,0 +1,32 @@
+version: '3.9'
+
+services:
+  server:
+    container_name: fast_api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./test_api/:/test_api/
+    command: uvicorn main:app  --host 0.0.0.0 --reload
+    ports:
+      - 8008:8000
+    depends_on:
+      - db
+
+  db:
+    image: postgres:11-alpine
+    container_name: test_db
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=123123
+      - POSTGRES_DB=db
+      - POSTGRES_INITDB_ARGS="-A md5"
+    ports:
+      - 5432:5432
+    volumes:
+      - db-data:/var/lib/postgresql/data
+volumes:
+  db-data:
+
