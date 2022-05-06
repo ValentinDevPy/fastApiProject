@@ -9,6 +9,7 @@ FastApi test_project это API с одним эндпоинтом, отправ
 ## Технологии
 
 - [FastAPI](https://github.com/tiangolo/fastapi) - фреймворк, который включает в себя все необходимое для быстрой разработки
+- [Postgresql](https://www.postgresql.org/) - opensource SQL СУБД.
 самых разнообразных API.
 - [Docker и Docker Compose](https://www.docker.com/) - ПО, позволяющее быстро разворачивать свои проекты на различных машинах.
 
@@ -25,7 +26,6 @@ git clone https://github.com/ValentinDevPy/fastApiProject.git
 
 ```
 cd fastApiProject
-
 ```
 
 Выполнить следующую команду(должны быть установлены Docker и Docker Compose):
