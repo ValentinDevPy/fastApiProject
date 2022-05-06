@@ -1,5 +1,4 @@
-FROM python:3.9.4
-
+FROM tiangolo/uvicorn-gunicorn:python3.9-alpine3.14
 WORKDIR /src/test_api
 
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -10,5 +9,6 @@ ENV PYTHONBUFFERED 1
 RUN pip install --upgrade pip
 COPY src/requirements.txt .
 RUN pip install -r requirements.txt
+
 
 COPY . .
