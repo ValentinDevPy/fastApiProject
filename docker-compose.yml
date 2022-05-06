@@ -3,11 +3,9 @@ version: '3.9'
 services:
   server:
     container_name: fast_api
-    build:
-      context: .
-      dockerfile: Dockerfile
+    build: .
     volumes:
-      - ./test_api/:/test_api/
+      - ./src/:/src/
     command: uvicorn main:app  --host 0.0.0.0 --reload
     ports:
       - 8008:8000
